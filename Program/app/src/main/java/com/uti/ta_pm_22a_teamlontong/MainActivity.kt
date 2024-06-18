@@ -33,4 +33,19 @@ class MainActivity : AppCompatActivity() {
         val txUntung: TextView = findViewById(R.id.txUntung)
         val buttonHitung: Button = findViewById(R.id.button)
 
+        // Masukkan data contoh saat pertama kali aplikasi dijalankan
+        val initialData = listOf(
+            Tanaman("Kentang", "Umbi-Umbian", "120 Hari", 18000, 30000),
+            Tanaman("Ubi Jalar", "Umbi-Umbian", "4 Bulan", 8000, 27000),
+            Tanaman("Singkong", "Umbi-Umbian", "8 Bulan", 3000, 15000),
+            Tanaman("Ubi Ungu", "Umbi-Umbian", "3 Bulan", 8000, 40000),
+            Tanaman("Padi", "Biji-Bijian", "180 Hari", 12000, 14000),
+            Tanaman("Kacang Tanah", "Biji-Bijian", "120 hari", 22000, 30000),
+            Tanaman("Jagung Manis", "Biji-Bijian", "80 Hari", 15000, 45000),
+            Tanaman("Kedelai", "Biji-Bijian", "120 Hari", 12000, 25000)
+        )
+        initialData.forEach { tanaman ->
+            dbHelper.insertData(tanaman)
+        }
+
 }
