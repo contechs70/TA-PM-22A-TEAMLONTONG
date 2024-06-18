@@ -33,4 +33,11 @@ class LoginActivity : AppCompatActivity() {
             loginDatabase(username, password)
         }
 
+//        event txRegis
+        binding.txRegis.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 }
