@@ -47,4 +47,67 @@ class MainActivity : AppCompatActivity() {
         initialData.forEach { tanaman ->
             dbHelper.insertData(tanaman)
         }
+
+        val tanamanNames = initialData.map { it.nama }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tanamanNames)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerTanaman.adapter = adapter
+
+        spinnerTanaman.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedNama = parent.getItemAtPosition(position) as String
+                val tanaman = dbHelper.getTanamanByName(selectedNama)
+
+                if (tanaman != null) {
+                    txNama.text = tanaman.nama
+                    txKategori.text = tanaman.kategori
+                    txWaktu.text = tanaman.waktuPanen
+                    txModal.text = tanaman.modalBibitPerKg.formatRupiah()
+                    txJual.text = tanaman.hargaJualPerKg.formatRupiah()
+                } else {
+                    txNama.text = ""
+                    txKategori.text = ""
+                    txWaktu.text = ""
+                    txModal.text = ""
+                    txJual.text = ""
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                txNama.text = ""
+                txKategori.text = ""
+                txWaktu.text = ""
+                txModal.text = ""
+                txJual.text = ""
+            }
+        }
+
+        buttonHitung.setOnClickListener {
+            val hasilPanenStr = txHasil.text.toString()
+            val hargaJualStr = txJual.text.toString()
+
+            if (hasilPanenStr.isNotEmpty() && hargaJualStr.isNotEmpty()) {
+                try {
+                    val hasilPanen = hasilPanenStr.toInt()
+                    val modalBibitPerKg = txModal.text.toString().replace("Rp", "").replace(".", "").toInt()
+                    val hargaJualPerKg = hargaJualStr.replace("Rp", "").replace(".", "").toInt()
+
+                    val totalModal = hasilPanen * modalBibitPerKg
+                    val totalPenjualan = hasilPanen * hargaJualPerKg
+                    val untung = totalPenjualan - totalModal
+
+                    txUntung.text = untung.formatRupiah()
+                } catch (e: NumberFormatException) {
+                    txUntung.text = "Masukkan angka yang valid untuk jumlah panen dan harga jual"
+                }
+            } else {
+                txUntung.text = "Jumlah panen dan harga jual tidak boleh kosong"
+            }
+        }
+    }
+
+    private fun Int.formatRupiah(): String {
+        val formatter = DecimalFormat("#,###,###")
+        return "Rp${formatter.format(this)}"
+    }
 }
