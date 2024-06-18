@@ -106,4 +106,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun Int.formatRupiah(): String {
+        val formatter = DecimalFormat("#,###,###")
+        return "Rp${formatter.format(this)}"
+    }
 }
