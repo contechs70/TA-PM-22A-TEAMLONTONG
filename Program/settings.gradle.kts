@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TA-PM-22A-TEAMLONTONG"
+rootProject.name = "Manajemen_Panen"
 include(":app")

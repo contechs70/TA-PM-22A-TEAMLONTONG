@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.uti.ta_pm_22a_teamlontong"
+    namespace = "com.uti.manajemen_panen"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.uti.ta_pm_22a_teamlontong"
+        applicationId = "com.uti.manajemen_panen"
         minSdk = 23
         targetSdk = 34
         versionCode = 1
@@ -33,6 +33,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+//    mendaftarkan binding
     buildFeatures{
         viewBinding = true
     }
@@ -45,6 +46,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
