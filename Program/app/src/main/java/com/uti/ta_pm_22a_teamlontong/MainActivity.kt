@@ -82,4 +82,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        buttonHitung.setOnClickListener {
+            val hasilPanenStr = txHasil.text.toString()
+            val hargaJualStr = txJual.text.toString()
+
 }
