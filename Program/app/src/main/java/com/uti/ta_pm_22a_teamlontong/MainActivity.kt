@@ -58,4 +58,11 @@ class MainActivity : AppCompatActivity() {
                 val selectedNama = parent.getItemAtPosition(position) as String
                 val tanaman = dbHelper.getTanamanByName(selectedNama)
 
+                if (tanaman != null) {
+                    txNama.text = tanaman.nama
+                    txKategori.text = tanaman.kategori
+                    txWaktu.text = tanaman.waktuPanen
+                    txModal.text = tanaman.modalBibitPerKg.formatRupiah()
+                    txJual.text = tanaman.hargaJualPerKg.formatRupiah()
+                } 
 }
