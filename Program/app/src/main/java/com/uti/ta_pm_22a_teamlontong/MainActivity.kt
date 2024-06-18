@@ -21,4 +21,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        dbHelper = DatabaseHelper(this)
+
+        val spinnerTanaman: Spinner = findViewById(R.id.spinnerTanaman)
+        val txNama: TextView = findViewById(R.id.txNama)
+        val txKategori: TextView = findViewById(R.id.txKategori)
+        val txWaktu: TextView = findViewById(R.id.txWaktu)
+        val txModal: TextView = findViewById(R.id.txModal)
+        val txJual: TextView = findViewById(R.id.txJual)
+        val txHasil: EditText = findViewById(R.id.txHasil)
+        val txUntung: TextView = findViewById(R.id.txUntung)
+        val buttonHitung: Button = findViewById(R.id.button)
+
 }
