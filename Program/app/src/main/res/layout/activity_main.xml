@@ -192,6 +192,17 @@
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:text="Hitung Untung"
+                android:backgroundTint="#f79219"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
 
     </LinearLayout>
 
