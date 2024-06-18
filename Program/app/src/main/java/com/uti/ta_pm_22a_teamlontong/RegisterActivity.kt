@@ -20,4 +20,7 @@ class RegisterActivity : AppCompatActivity() {
         val binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Binding database
+        databaseHelper = dbLogin(this)
+
 }
