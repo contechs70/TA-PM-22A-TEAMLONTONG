@@ -48,4 +48,9 @@ class MainActivity : AppCompatActivity() {
             dbHelper.insertData(tanaman)
         }
 
+        val tanamanNames = initialData.map { it.nama }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tanamanNames)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerTanaman.adapter = adapter
+
 }
