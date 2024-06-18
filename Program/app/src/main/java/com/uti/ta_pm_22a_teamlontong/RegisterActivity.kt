@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.uti.manajemen_panen.Class.dbLogin
-import com.uti.manajemen_panen.databinding.ActivityRegisterBinding
+import com.uti.ta_pm_22a_teamlontong.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var databaseHelper: dbLogin
