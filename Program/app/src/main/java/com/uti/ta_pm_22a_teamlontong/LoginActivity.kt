@@ -23,4 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        binding databaseHelper
+        databaseHelper = dbLogin(this)
+
 }
