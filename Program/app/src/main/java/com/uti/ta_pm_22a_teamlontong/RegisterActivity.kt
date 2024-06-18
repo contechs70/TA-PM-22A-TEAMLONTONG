@@ -30,4 +30,11 @@ class RegisterActivity : AppCompatActivity() {
             signupDatabase(user, pass)
         }
 
+//        event txLogin
+        binding.txLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 }
