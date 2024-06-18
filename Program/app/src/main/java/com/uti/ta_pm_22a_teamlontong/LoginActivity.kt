@@ -16,5 +16,11 @@ class LoginActivity : AppCompatActivity() {
     //    deklarasi binding untuk databaseHelper
     private lateinit var databaseHelper: dbLogin
 
-   
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+//        buat variabel binding untuk LoginActivity
+        val binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 }
