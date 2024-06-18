@@ -64,5 +64,13 @@ class MainActivity : AppCompatActivity() {
                     txWaktu.text = tanaman.waktuPanen
                     txModal.text = tanaman.modalBibitPerKg.formatRupiah()
                     txJual.text = tanaman.hargaJualPerKg.formatRupiah()
-                } 
+                } else {
+                    txNama.text = ""
+                    txKategori.text = ""
+                    txWaktu.text = ""
+                    txModal.text = ""
+                    txJual.text = ""
+                }
+            }
+
 }
