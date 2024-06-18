@@ -51,6 +51,15 @@
                 android:hint="Password"
                 android:inputType="textPassword" />
 
+            <Button
+                android:id="@+id/btnRegis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="#2196F3"
+
+                android:text="Sign Up" />
+
 
     <ImageView
         android:id="@+id/imageView"
