@@ -45,4 +45,12 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    //    insert username dan password ke SQLite
+    private fun signupDatabase(username: String, password: String) {
+        if (username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Username atau Password tidak boleh kosong !", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+
 }
