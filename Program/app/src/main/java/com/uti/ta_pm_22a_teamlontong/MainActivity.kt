@@ -53,4 +53,9 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerTanaman.adapter = adapter
 
+        spinnerTanaman.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedNama = parent.getItemAtPosition(position) as String
+                val tanaman = dbHelper.getTanamanByName(selectedNama)
+
 }
