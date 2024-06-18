@@ -73,4 +73,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                txNama.text = ""
+                txKategori.text = ""
+                txWaktu.text = ""
+                txModal.text = ""
+                txJual.text = ""
+            }
+        }
+
 }
