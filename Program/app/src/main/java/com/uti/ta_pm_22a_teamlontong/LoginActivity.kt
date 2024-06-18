@@ -48,4 +48,23 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    //    membaca username dan password dari SQLite
+    private fun loginDatabase(username: String, password: String) {
+//        periksa apakah username dan password sudah diisi
+        if (username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Username atau Password tidak boleh kosong !", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+
+        val userExists = databaseHelper.readUser(username, password)
+        if (userExists) {
+//            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            Toast.makeText(this, "Username atau Password tidak sesuai !", Toast.LENGTH_SHORT).show()
+        }
+    }
 }
