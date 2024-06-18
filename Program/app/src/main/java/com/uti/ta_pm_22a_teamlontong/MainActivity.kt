@@ -86,4 +86,19 @@ class MainActivity : AppCompatActivity() {
             val hasilPanenStr = txHasil.text.toString()
             val hargaJualStr = txJual.text.toString()
 
+            if (hasilPanenStr.isNotEmpty() && hargaJualStr.isNotEmpty()) {
+                try {
+                    val hasilPanen = hasilPanenStr.toInt()
+                    val modalBibitPerKg = txModal.text.toString().replace("Rp", "").replace(".", "").toInt()
+                    val hargaJualPerKg = hargaJualStr.replace("Rp", "").replace(".", "").toInt()
+
+                    val totalModal = hasilPanen * modalBibitPerKg
+                    val totalPenjualan = hasilPanen * hargaJualPerKg
+                    val untung = totalPenjualan - totalModal
+
+                    txUntung.text = untung.formatRupiah()
+                } catch (e: NumberFormatException) {
+                    txUntung.text = "Masukkan angka yang valid untuk jumlah panen dan harga jual"
+                }
+            }
 }
