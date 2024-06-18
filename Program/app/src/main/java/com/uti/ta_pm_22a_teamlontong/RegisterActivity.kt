@@ -23,4 +23,11 @@ class RegisterActivity : AppCompatActivity() {
         // Binding database
         databaseHelper = dbLogin(this)
 
+//        event btnRegis
+        binding.btnRegis.setOnClickListener {
+            val user = binding.Username.text.toString()
+            val pass = binding.Password.text.toString()
+            signupDatabase(user, pass)
+        }
+
 }
