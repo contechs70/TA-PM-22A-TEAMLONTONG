@@ -9,8 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.uti.ta_pm_22a_teamlontong.MainActivity
-import com.uti.ta_pm_22a_teamlontong.R
+import com.uti.manajemen_panen.Class.dbLogin
+import com.uti.manajemen_panen.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     //    deklarasi binding untuk databaseHelper
