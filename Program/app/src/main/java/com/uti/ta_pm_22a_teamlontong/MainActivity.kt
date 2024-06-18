@@ -100,5 +100,10 @@ class MainActivity : AppCompatActivity() {
                 } catch (e: NumberFormatException) {
                     txUntung.text = "Masukkan angka yang valid untuk jumlah panen dan harga jual"
                 }
+            } else {
+                txUntung.text = "Jumlah panen dan harga jual tidak boleh kosong"
             }
+        }
+    }
+
 }
